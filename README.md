@@ -1,5 +1,85 @@
 # NETRA
-City-Wide AI Engine for Multi-Camera ANPR Trajectory Tracking and Urban Traffic Analytics
- Background Modern urban centers deploy vast networks of CCTV and Automatic Number Plate Recognition(ANPR) cameras to manage traffic, enforce traffic laws, and maintain public security. However,most existing systems process these feeds in isolated silos, performing basic license plate detection without effectively linking data across space and time. This lack of integration prevents city authorities from automatically tracking high-interest vehicles across different sectors and limits their ability to extract macro-level traffic movement trends from the existing camera infrastructure.
-• Description The objective is to develop a robust, centralized AI software platform that processes multicamera feeds across a city-wide ANPR network to accomplish three core functionalities. First, the platform must feature a High-Accuracy ANPR and OCR Engine, which utilizes an advanced Optical Character Recognition model capable of achieving greater than 90% accuracy across diverse realworld conditions such as varying lighting, poor weather, angled shots, motion blur, and dirty or damaged license plates. Second, it requires a Single Plate Trajectory Tracking module to build a spatial-temporal tracking system capable of reconstructing the complete travel trajectory of any specific vehicle plate across the entire city network. This system will map a vehicle's movement history, timestamps, direction, and route on a GIS map using inputs from geographically distributed ANPR cameras. Third, the system must perform Macro Traffic Flow and Movement Analytics by analyzing aggregated camera data to compute and visualize general city-wide traffic dynamics. This includes measuring traffic density, identifying origin-destination patterns,detecting congestion bottlenecks, and providing real-time heatmaps of city traffic movement.
-• Expected Solution The expected solution is a scalable, enterprise-grade software platform equipped with four key components. It will feature a High-Precision OCR Module powered by a deep-learning model exceeding 90% recognition accuracy for license plates in multi-lane traffic streams. It will include a Trajectory Reconstruction Engine providing a query-based tracking interface that plots a vehicle's historical path chronologically across the city map with accurate timestamps and camera locations. Furthermore, it will integrate a City Traffic Analytics Dashboard to serve as a centralized, GIS-integrated web platform displaying heatmaps, average vehicle speeds, route densities, and traffic flow trends across all camera nodes. Finally, the platform will incorporate an Alert System capable of flagging blacklisted vehicles and suspicious route anomalies in real time.
+### Networked Engine for Traffic Recognition and Analytics
+
+> **City-Wide AI Engine for Multi-Camera ANPR, Vehicle Trajectory Tracking and Urban Traffic Analytics**
+
+---
+
+## 📌 Overview
+
+Modern cities deploy large networks of CCTV and Automatic Number Plate Recognition (ANPR) cameras for traffic management, law enforcement, and public safety. However, many existing systems operate individual camera feeds in isolation and primarily perform vehicle or license plate detection without effectively connecting observations across different cameras.
+
+This creates a major limitation: authorities cannot efficiently reconstruct the movement of a specific vehicle across a city or extract meaningful city-wide traffic patterns from geographically distributed camera networks.
+
+**NETRA (Networked Engine for Traffic Recognition and Analytics)** is a centralized AI-powered platform designed to integrate data from multiple ANPR cameras and transform individual vehicle detections into meaningful spatial-temporal intelligence.
+
+The system combines:
+
+- Vehicle and license plate detection
+- License plate OCR
+- Multi-camera vehicle association
+- Plate-based vehicle matching
+- Trajectory reconstruction
+- GIS-based visualization
+- City-wide traffic analytics
+- Real-time alert generation
+
+---
+
+# 🎯 Problem Statement
+
+Existing ANPR systems often process camera feeds independently.
+
+As a result:
+
+- A vehicle detected by Camera A may not be connected to its detection by Camera B.
+- Complete vehicle travel paths cannot easily be reconstructed.
+- Traffic movement between different locations is difficult to analyze.
+- Suspicious vehicle movements may not be detected automatically.
+- Camera-level information is not effectively converted into city-wide traffic intelligence.
+
+NETRA addresses this problem by creating a unified pipeline that connects observations from multiple cameras using vehicle detection, license plate recognition, temporal information, spatial relationships, and camera metadata.
+
+---
+
+# 🚀 Objectives
+
+NETRA aims to achieve three major objectives:
+
+### 1. High-Accuracy ANPR and OCR
+
+Detect vehicles and license plates from multiple camera feeds and extract license plate characters using an OCR-based recognition pipeline.
+
+The system is designed to handle challenging real-world conditions including:
+
+- Different lighting conditions
+- Poor weather
+- Angled license plates
+- Motion blur
+- Low-resolution frames
+- Dirty or damaged plates
+- Multi-lane traffic
+- Different camera viewpoints
+
+The target is **greater than 90% license plate recognition accuracy** under supported conditions.
+
+---
+
+### 2. Single-Plate Trajectory Tracking
+
+Reconstruct the movement history of a specific license plate across multiple cameras.
+
+For a queried vehicle, the system should provide:
+
+```text
+Vehicle / Plate
+      ↓
+Camera 01
+      ↓
+Camera 04
+      ↓
+Camera 07
+      ↓
+Camera 12
+      ↓
+Camera 18
