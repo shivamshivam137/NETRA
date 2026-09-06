@@ -1,0 +1,13 @@
+Vehicle ID,Vehicle Type,Vehicle Confidence,Plate Number,Plate Confidence,OCR Confidence,Indian Plate
+Vehicle_001,Truck,0.751,147455222,0.216,0.863,NO
+Vehicle_001,Car,0.654,KH03FC0558,0.858,0.832,YES
+Vehicle_010,Truck,0.679,1,0.189,0.531,NO
+Vehicle_010,Truck,0.592,B,0.209,0.405,NO
+Vehicle_010,Truck,0.749,7,0.278,0.281,NO
+Vehicle_010,Truck,0.835,MH0ZE15H,0.823,0.417,NO
+Vehicle_010,Truck,0.933,MH02515154,0.86,0.917,NO
+Vehicle_018,Truck,0.702,1,0.156,0.357,NO
+Vehicle_019,Car,0.553,E,0.426,0.472,NO
+Vehicle_092,Car,0.764,129792,0.928,0.648,NO
+Vehicle_114,Car,0.756,MH04GZ8516,0.845,0.828,YES
+Vehicle_124,Car,0.727,AHRZ6CA2177,0.516,0.548,NO
