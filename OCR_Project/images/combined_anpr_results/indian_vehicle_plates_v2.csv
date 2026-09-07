@@ -1,3 +1,0 @@
-Vehicle ID,Vehicle Type,Vehicle Confidence,Frames Seen,Plate Observations,Plate Number,Plate Confidence,OCR Confidence,Indian Plate
-Vehicle_001,Truck,0.751,2,2,KH03FC0558,0.858,0.832,YES
-Vehicle_114,Car,0.756,1,1,MH04GZ8516,0.845,0.828,YES
