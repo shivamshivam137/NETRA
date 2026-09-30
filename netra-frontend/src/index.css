@@ -1,0 +1,385 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+/* ─── Base reset ──────────────────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  background-color: #0b0f1a;
+  color: #e2e8f0;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+#root {
+  width: 100%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ─── Custom Leaflet Command-Center Map Styling ──────────────────────────── */
+.leaflet-container {
+  font-family: inherit;
+  z-index: 1;
+  outline: none;
+}
+
+/* Dark themed custom popups */
+.netra-custom-popup .leaflet-popup-content-wrapper {
+  background: #091022 !important;
+  color: #e2e8f0 !important;
+  border: 1px solid rgba(51, 65, 85, 0.8) !important;
+  border-radius: 0.75rem !important;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.6), 0 8px 10px -6px rgba(0, 0, 0, 0.6) !important;
+  padding: 0 !important;
+  overflow: hidden;
+}
+
+.netra-custom-popup .leaflet-popup-content {
+  margin: 0 !important;
+  line-height: inherit !important;
+}
+
+.netra-custom-popup .leaflet-popup-tip {
+  background: #091022 !important;
+  border: 1px solid rgba(51, 65, 85, 0.8) !important;
+}
+
+.netra-custom-popup .leaflet-popup-close-button {
+  color: #94a3b8 !important;
+  padding: 6px 8px !important;
+}
+
+.netra-custom-popup .leaflet-popup-close-button:hover {
+  color: #38bdf8 !important;
+}
+
+/* ─── Leaflet Bottom-Right Zoom Controls (Dark UI) ───────────────────────── */
+.leaflet-bottom.leaflet-right .leaflet-control-zoom {
+  margin-right: 14px !important;
+  margin-bottom: 14px !important;
+  border: 1px solid rgba(51, 65, 85, 0.9) !important;
+  border-radius: 0.5rem !important;
+  overflow: hidden;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -4px rgba(0, 0, 0, 0.5) !important;
+}
+
+.leaflet-control-zoom a {
+  background-color: #091022 !important;
+  color: #94a3b8 !important;
+  border-bottom: 1px solid rgba(51, 65, 85, 0.7) !important;
+  width: 32px !important;
+  height: 32px !important;
+  line-height: 32px !important;
+  font-size: 16px !important;
+  font-weight: bold !important;
+  transition: all 0.15s ease !important;
+}
+
+.leaflet-control-zoom a:last-child {
+  border-bottom: none !important;
+}
+
+.leaflet-control-zoom a:hover {
+  background-color: #0f172a !important;
+  color: #38bdf8 !important;
+}
+
+.leaflet-control-attribution {
+  background: rgba(8, 13, 25, 0.85) !important;
+  color: #64748b !important;
+  font-size: 10px !important;
+  border-top-left-radius: 6px;
+  padding: 2px 6px !important;
+  margin: 0 !important;
+}
+
+.leaflet-control-attribution a {
+  color: #38bdf8 !important;
+}
+
+/* ─── Custom Scrollbar ────────────────────────────────────────────────────── */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #1e3a5f;
+  border-radius: 9999px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #2563eb;
+}
+
+/* ─── Animations ──────────────────────────────────────────────────────────── */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0);   }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.2s ease-out both;
+}
+
+/* ─── Select elements default theme ───────────────────────────────────────── */
+select {
+  color-scheme: dark;
+}
+
+/* ─── Table responsive helpers ───────────────────────────────────────────── */
+.overflow-x-auto {
+  -webkit-overflow-scrolling: touch;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   ─── LIGHT THEME SYSTEM OVERRIDES ──────────────────────────────────────────────
+   ═══════════════════════════════════════════════════════════════════════════════ */
+[data-theme="light"],
+html.light {
+  color-scheme: light;
+}
+
+[data-theme="light"] body,
+html.light body {
+  background-color: #f1f5f9;
+  color: #0f172a;
+}
+
+/* Background containers */
+[data-theme="light"] .bg-\[\#060a12\],
+html.light .bg-\[\#060a12\] {
+  background-color: #f8fafc !important;
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .bg-\[\#0b0f1a\],
+html.light .bg-\[\#0b0f1a\] {
+  background-color: #f1f5f9 !important;
+}
+
+[data-theme="light"] .bg-\[\#080d19\],
+[data-theme="light"] .bg-\[\#080d19\]\/95,
+[data-theme="light"] .bg-\[\#080d19\]\/80,
+html.light .bg-\[\#080d19\],
+html.light .bg-\[\#080d19\]\/95,
+html.light .bg-\[\#080d19\]\/80 {
+  background-color: #ffffff !important;
+}
+
+[data-theme="light"] .bg-\[\#091022\],
+[data-theme="light"] .bg-\[\#091022\]\/95,
+[data-theme="light"] .bg-\[\#091022\]\/90,
+[data-theme="light"] .bg-\[\#091022\]\/80,
+html.light .bg-\[\#091022\],
+html.light .bg-\[\#091022\]\/95,
+html.light .bg-\[\#091022\]\/90,
+html.light .bg-\[\#091022\]\/80 {
+  background-color: #ffffff !important;
+}
+
+[data-theme="light"] .bg-\[\#070c18\],
+[data-theme="light"] .bg-\[\#060a14\],
+[data-theme="light"] .bg-\[\#060a14\]\/80,
+[data-theme="light"] .bg-\[\#0a1122\],
+[data-theme="light"] .bg-\[\#0b1329\],
+[data-theme="light"] .bg-\[\#0a1226\],
+html.light .bg-\[\#070c18\],
+html.light .bg-\[\#060a14\],
+html.light .bg-\[\#060a14\]\/80,
+html.light .bg-\[\#0a1122\],
+html.light .bg-\[\#0b1329\],
+html.light .bg-\[\#0a1226\] {
+  background-color: #f1f5f9 !important;
+}
+
+[data-theme="light"] .bg-\[\#0d172e\],
+html.light .bg-\[\#0d172e\] {
+  background-color: #e2e8f0 !important;
+}
+
+[data-theme="light"] .bg-slate-900,
+[data-theme="light"] .bg-slate-900\/90,
+[data-theme="light"] .bg-slate-950,
+html.light .bg-slate-900,
+html.light .bg-slate-900\/90,
+html.light .bg-slate-950 {
+  background-color: #f8fafc !important;
+}
+
+[data-theme="light"] .bg-slate-800,
+[data-theme="light"] .bg-slate-800\/90,
+html.light .bg-slate-800,
+html.light .bg-slate-800\/90 {
+  background-color: #e2e8f0 !important;
+}
+
+[data-theme="light"] .bg-slate-800\/50,
+[data-theme="light"] .bg-slate-800\/60,
+html.light .bg-slate-800\/50,
+html.light .bg-slate-800\/60 {
+  background-color: #f1f5f9 !important;
+}
+
+/* Borders */
+[data-theme="light"] .border-slate-800,
+[data-theme="light"] .border-slate-800\/80,
+[data-theme="light"] .border-slate-800\/90,
+[data-theme="light"] .border-slate-800\/60,
+[data-theme="light"] .border-slate-800\/50,
+html.light .border-slate-800,
+html.light .border-slate-800\/80,
+html.light .border-slate-800\/90,
+html.light .border-slate-800\/60,
+html.light .border-slate-800\/50 {
+  border-color: #e2e8f0 !important;
+}
+
+[data-theme="light"] .border-slate-700,
+[data-theme="light"] .border-slate-700\/80,
+[data-theme="light"] .border-slate-700\/90,
+html.light .border-slate-700,
+html.light .border-slate-700\/80,
+html.light .border-slate-700\/90 {
+  border-color: #cbd5e1 !important;
+}
+
+[data-theme="light"] .divide-slate-800 > :not([hidden]) ~ :not([hidden]),
+[data-theme="light"] .divide-slate-800\/50 > :not([hidden]) ~ :not([hidden]),
+html.light .divide-slate-800 > :not([hidden]) ~ :not([hidden]),
+html.light .divide-slate-800\/50 > :not([hidden]) ~ :not([hidden]) {
+  border-color: #e2e8f0 !important;
+}
+
+/* Typography */
+[data-theme="light"] .text-white,
+html.light .text-white {
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .text-slate-100,
+html.light .text-slate-100 {
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .text-slate-200,
+html.light .text-slate-200 {
+  color: #1e293b !important;
+}
+
+[data-theme="light"] .text-slate-300,
+html.light .text-slate-300 {
+  color: #334155 !important;
+}
+
+[data-theme="light"] .text-slate-400,
+[data-theme="light"] .text-slate-500,
+html.light .text-slate-400,
+html.light .text-slate-500 {
+  color: #64748b !important;
+}
+
+/* Preserve White Text for Primary Buttons & Solid Badges */
+[data-theme="light"] .bg-gradient-to-r .text-white,
+[data-theme="light"] .bg-gradient-to-tr .text-white,
+[data-theme="light"] button.bg-gradient-to-r,
+[data-theme="light"] button.bg-cyan-600,
+[data-theme="light"] .bg-cyan-600,
+[data-theme="light"] .bg-blue-600,
+[data-theme="light"] .bg-emerald-600,
+[data-theme="light"] .bg-rose-600,
+[data-theme="light"] .bg-amber-600,
+html.light .bg-gradient-to-r .text-white,
+html.light .bg-gradient-to-tr .text-white,
+html.light button.bg-gradient-to-r,
+html.light button.bg-cyan-600,
+html.light .bg-cyan-600,
+html.light .bg-blue-600,
+html.light .bg-emerald-600,
+html.light .bg-rose-600,
+html.light .bg-amber-600 {
+  color: #ffffff !important;
+}
+
+/* Light Selects & Inputs */
+[data-theme="light"] select,
+html.light select {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  border-color: #cbd5e1 !important;
+  color-scheme: light !important;
+}
+
+[data-theme="light"] input:not([type="checkbox"]),
+html.light input:not([type="checkbox"]) {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  border-color: #cbd5e1 !important;
+  color-scheme: light !important;
+}
+
+[data-theme="light"] input::placeholder,
+html.light input::placeholder {
+  color: #94a3b8 !important;
+}
+
+/* Sidebar & Header layout elements in light mode */
+[data-theme="light"] aside,
+html.light aside {
+  background-color: #ffffff !important;
+  border-right-color: #e2e8f0 !important;
+}
+
+[data-theme="light"] header,
+html.light header {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  border-bottom-color: #e2e8f0 !important;
+}
+
+/* Custom scrollbars in light mode */
+[data-theme="light"] .custom-scrollbar::-webkit-scrollbar-thumb,
+html.light .custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+}
+
+[data-theme="light"] .custom-scrollbar::-webkit-scrollbar-thumb:hover,
+html.light .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Leaflet popups in light mode */
+[data-theme="light"] .netra-custom-popup .leaflet-popup-content-wrapper,
+html.light .netra-custom-popup .leaflet-popup-content-wrapper {
+  background: #ffffff !important;
+  color: #0f172a !important;
+  border: 1px solid #cbd5e1 !important;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1) !important;
+}
+
+[data-theme="light"] .netra-custom-popup .leaflet-popup-tip,
+html.light .netra-custom-popup .leaflet-popup-tip {
+  background: #ffffff !important;
+  border: 1px solid #cbd5e1 !important;
+}
+
+[data-theme="light"] .netra-custom-popup .leaflet-popup-close-button,
+html.light .netra-custom-popup .leaflet-popup-close-button {
+  color: #64748b !important;
+}
