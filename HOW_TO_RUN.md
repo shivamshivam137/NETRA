@@ -38,7 +38,7 @@ Before running the application, ensure you have the following installed on your 
 If you already have Node.js and npm installed, simply run:
 
 ```bash
-cd netra-frontend
+cd NETRA_Core
 npm install
 npm run dev
 ```
@@ -53,13 +53,13 @@ Then open your browser at **[http://localhost:5173/](http://localhost:5173/)**.
 Open your preferred terminal (PowerShell, Command Prompt, Git Bash, or VS Code integrated terminal).
 
 ### Step 2: Navigate to Frontend Directory
-Change your working directory to the `netra-frontend` folder:
+Change your working directory to the `NETRA_Core` folder:
 
 ```bash
-cd netra-frontend
+cd NETRA_Core
 ```
 
-*(If you are already inside the root `NETRA` folder, the relative path is `netra-frontend`)*
+*(If you are already inside the root `NETRA` folder, the relative path is `NETRA_Core`)*
 
 ---
 
@@ -75,7 +75,7 @@ npm install
 ---
 
 ### Step 4: Verify Environment Configuration
-Check that `.env` exists in the `netra-frontend/` directory.
+Check that `.env` exists in the `NETRA_Core/` directory.
 
 The application includes configured Supabase credentials:
 ```env
@@ -140,7 +140,7 @@ You should see output similar to:
 
 ## ⌨️ Useful Scripts & Commands
 
-All commands should be executed from within the `netra-frontend/` directory:
+All commands should be executed from within the `NETRA_Core/` directory:
 
 | Command | Purpose |
 | :--- | :--- |

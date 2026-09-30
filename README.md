@@ -114,7 +114,7 @@ This creates a critical operational blind spot: **law enforcement and traffic au
 NETRA/
 ├── HOW_TO_RUN.md               # Detailed installation & run instructions
 ├── README.md                   # Project documentation & overview
-└── netra-frontend/             # React + Vite web application
+└── NETRA_Core/                 # React + Vite web application
     ├── public/                 # Static assets & map icons
     ├── src/
     │   ├── assets/             # Branding imagery & logos
@@ -144,7 +144,7 @@ NETRA/
 ### 1. Clone & Navigate
 ```bash
 git clone https://github.com/shivamshivam137/NETRA.git
-cd NETRA/netra-frontend
+cd NETRA/NETRA_Core
 ```
 
 ### 2. Install Dependencies
@@ -168,7 +168,7 @@ On the login screen, click **⚡ Quick Demo Login** to immediately enter the Com
 
 ## ⚙️ Environment Variables
 
-Create a `.env` file inside `netra-frontend/` (or copy from `.env.example`):
+Create a `.env` file inside `NETRA_Core/` (or copy from `.env.example`):
 
 ```env
 VITE_SUPABASE_URL=https://your-project.supabase.co
